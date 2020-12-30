@@ -1,0 +1,70 @@
+{
+	"Merge Dataset": {
+		"type": "function",
+		"next": "Check Result",
+		"functionId": "{{{ENTER_YOUR_FUNCTION_ID_HERE}}}",
+		"inputPath": "$.dataset_results",
+		"resultPath": "$.result"
+	},
+	"Dataset Processing": {
+		"type": "parallel",
+		"next": "Merge Dataset",
+		"start": true,
+		"paths": [
+			{
+				"name": "rating_list",
+				"root": "Rating Processor"
+			},
+			{
+				"name": "traveller_type_rating_list",
+				"root": "Traveller Type Rating Processor"
+			}
+		],
+		"resultPath": "$.dataset_results"
+	},
+	"Rating Processor": {
+		"type": "function",
+		"next": "Merge Dataset",
+		"functionId": "{{{ENTER_YOUR_FUNCTION_ID_HERE}}}",
+		"outputPath": "$.result",
+		"resultPath": "$.result",
+		"parameter": {
+			"type": "$.rating",
+			"count": "$.count"
+		}
+	},
+	"Traveller Type Rating Processor": {
+		"type": "function",
+		"next": "Merge Dataset",
+		"functionId": "{{{ENTER_YOUR_FUNCTION_ID_HERE}}}",
+		"outputPath": "$.result",
+		"resultPath": "$.result",
+		"parameter": {
+			"type": "$.traveller",
+			"count": "$.count"
+		}
+	},
+	"Mailer": {
+		"type": "function",
+		"next": "End",
+		"functionId": "{{{ENTER_YOUR_FUNCTION_ID_HERE}}}",
+		"resultPath": "$.result.museum_list",
+		"parameter": {
+			"content": "$.result.museum_list",
+			"mail_id": "$.mail_id"
+		}
+	},
+	"Check Result": {
+		"type": "branch",
+		"next": "Mailer",
+		"branches": [
+			{
+				"condition": "$.result.museum_list.size() == 0",
+				"next": "Failure"
+			}
+		]
+	},
+	"Failure": {
+		"type": "failure"
+	}
+}

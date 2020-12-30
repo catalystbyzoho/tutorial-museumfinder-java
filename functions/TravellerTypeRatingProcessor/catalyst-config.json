@@ -1,0 +1,10 @@
+{
+	"deployment": {
+		"name": "TravellerTypeRatingProcessor",
+		"stack": "java8",
+		"type": "basicio"
+	},
+	"execution": {
+		"main": "TravellerTypeRatingProcessor"
+	}
+}

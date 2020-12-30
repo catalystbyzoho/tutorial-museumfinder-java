@@ -1,0 +1,10 @@
+{
+	"deployment": {
+		"name": "Mailer",
+		"stack": "java8",
+		"type": "basicio"
+	},
+	"execution": {
+		"main": "Mailer"
+	}
+}

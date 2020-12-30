@@ -1,0 +1,20 @@
+{
+  "functions": {
+    "targets": [
+      "RatingProcessor",
+      "TravellerTypeRatingProcessor",
+      "MergeDataSet",
+      "Mailer",
+      "circuit"
+    ],
+    "ignore": [
+      ".output",
+      ".project",
+      ".classpath"
+    ],
+    "source": "functions"
+  },
+  "client": {
+    "source": "client"
+  }
+}

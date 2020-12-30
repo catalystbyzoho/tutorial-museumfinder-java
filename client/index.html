@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Museum Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <script src="https://js.zohostatic.com/catalystclient/1.0.0/catalystWebSDK.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- JQuery -->
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</head>
+
+
+<body>
+    <div id="maindiv">
+        <nav class="navbar navbar-expand-lg navbar-dark brown">
+            <a class="navbar-brand" href="">Best Museum Finder ®</a>
+        </nav>
+        <br><br><br>
+        <center>
+            <h2>Get the list of best museums in the US based on your Choice and Rating !</h2>
+            <br><br><br>
+            <form id="myForm">
+                <label for="Type">Traveller Type: </label>
+                <select name="Type" id="Type">
+                    <option disabled selected value> -- select an option -- </option>
+                    <option value="Families">Families</option>
+                    <option value="Couples">Couples</option>
+                    <option value="Solo">Solo</option>
+                    <option value="Business">Business</option>
+                    <option value="Friends">Friends</option>
+                    <option>----------------------</option>
+                </select>                 
+                <label for="Rating">Select the rating : </label>
+                <select name="Rating" id="Rating">
+                    <option disabled selected value> -- select an option -- </option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Very good">Very good</option>
+                    <option value="Average">Average</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Terrible">Terrible</option>
+                    <option>----------------------</option>
+                </select><br><br><br>
+                Enter the number of Museums you want : <input type="text" id="count" required><br><br><br>
+                Enter your Mail ID : <input type="email" id="mailid" required><br><br><br><br>
+                <button type="button" id="button" class="btn btn-brown" data-toggle="modal"
+                    data-target="#basicExampleModal" onclick="triggerCircuit()">Submit details</button></form>
+        </center>
+    </div>
+    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <center><br><p id="popuptext"></p><br>
+
+                        <button type="button" class="btn btn-brown" data-dismiss="modal">Close</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
